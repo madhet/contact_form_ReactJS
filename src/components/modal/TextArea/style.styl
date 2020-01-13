@@ -1,0 +1,55 @@
+.textarea-wrapper
+	position relative
+	width 100%
+	flex-basis 100%
+	textarea
+		width 100%
+		outline none
+		resize none
+		position relative
+		border solid 1px #e6e6e6
+		background-color transparent
+		padding 10px
+		margin 25px 0
+		z-index 3
+		box-sizing border-box
+		font-family 'Raleway'
+		font-size 18px
+		color rgba(43, 43, 43, 0.6)
+		+ .placeholder
+			transition .3s
+			position absolute
+			left 10px
+			top 33px
+			z-index 1
+			opacity 0.6
+			font-family 'Raleway'
+			font-size 18px
+			color rgba(43, 43, 43, 0.6)
+			.required
+				font-family 'Raleway'
+				font-size 18px
+				color red
+		&:focus,
+		&:not(:empty)
+			background-color #e6e6e6
+			+ .placeholder
+				transition .3s
+				top 0px
+		&.error
+			border solid 1px red
+			background-color transparent
+			color red
+			+ .placeholder
+				color red
+			~ .error-span
+				display block
+				position absolute
+				top 89%
+				left 10px
+	.error-span
+		display none
+		opacity 0.6
+		font-family 'Raleway'
+		font-size 18px
+		color rgba(255, 0, 0, 0.6)
